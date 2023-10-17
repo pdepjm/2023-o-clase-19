@@ -115,7 +115,7 @@ class Equipo{
 	method jugadoresDisponibles() = jugadores.filter({jugador => jugador.puedeJugar()})
 
 	method jugar(){
-		jugadores.forEach({jugador => jugador.jugar()})
+		self.jugadoresDisponibles().forEach({jugador => jugador.jugar()})
 	}
 	
 	method habilidad() = jugadores.sum({jugador => jugador.habilidad()})
