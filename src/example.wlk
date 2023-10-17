@@ -100,3 +100,23 @@ class Partida {
 	}	
 	
 }
+
+class Equipo{
+	const jugadores = []
+	
+	method contratarJugador(nuevoJugador){
+		jugadores.add(nuevoJugador)
+	}
+	
+	method removerJugador(jugador){
+		jugadores.remove(jugador)
+	}
+	
+	method jugadoresDisponibles() = jugadores.filter({jugador => jugador.puedeJugar()})
+
+	method jugar(){
+		jugadores.forEach({jugador => jugador.jugar()})
+	}
+	
+	method habilidad() = jugadores.sum({jugador => jugador.habilidad()})
+}
